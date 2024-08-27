@@ -22,11 +22,13 @@ CREATE TABLE Administradores (
 );
 CREATE TABLE Habitaciones (
     id_habitacion INT AUTO_INCREMENT NOT NULL PRIMARY KEY,
-    Disponibilidad ENUM('Disponible', 'Ocupado', 'En limpieza', 'En mantenimiento', 'Otros'),
+    Disponibilidad ENUM('Disponible', 'Ocupado', 'En limpieza', 'En mantenimiento', 'Otros', 'Reservado'),
     Tipo_Habitacion VARCHAR(100) NOT NULL,
     Capacidad INT NOT NULL,
     Precio DECIMAL(10,2) NOT NULL
 );
+
+-- drop Table habitaciones
 
 ALTER TABLE Habitaciones
 MODIFY COLUMN Tipo_Habitacion ENUM('Individual', 'Doble', 'Triple', 'Cuádruple', 'Suite') NOT NULL;

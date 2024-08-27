@@ -5,18 +5,6 @@ WHERE `Disponibilidad` = 'Disponible'
 
 SELECT * FROM mostar_disponibles
 
--- CREATE TRIGGER actualizar_vista_mantenimiento
--- AFTER INSERT OR UPDATE OR DELETE ON habitaciones
--- FOR EACH ROW
--- BEGIN
---     DROP VIEW mostrar_mantenimiento;
---     CREATE View mostrar_mantenimiento AS 
---     SELECT `Disponibilidad`,`Tipo_Habitacion`
---     FROM habitaciones
---     INNER JOIN reservas ON habitaciones.id_habitacion = reservas.id_habitacion
---     WHERE `Disponibilidad` = 'En mantenimiento';
--- END;
-
 CREATE View mostrar_mantenimiento AS 
 SELECT `Disponibilidad`,`Tipo_Habitacion`
 FROM habitaciones
